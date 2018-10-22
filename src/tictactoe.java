@@ -16,130 +16,83 @@ public class tictactoe extends JFrame {
     private void button1ActionPerformed(ActionEvent e) {
         if(button1.getText().equals("")) {
             button1.setText(main.playerMark);
-            Main.verifyEndGame(main.playerMark);
+            main.alreadyFilled.add(1);
+            main.verifyEndGame(main.playerMark);
             this.markCell(main.cp.computeNewPlay(main.alreadyFilled));
         }
-        main.alreadyFilled.add(1);
     }
 
     private void button2ActionPerformed(ActionEvent e) {
         if(button2.getText().equals("")) {
-            if (Main.isPlayerTurn){
-                button2.setText(main.playerMark);
-                Main.verifyEndGame(main.playerMark);
-                Main.isPlayerTurn = false;
-            } else {
-                button2.setText(main.computerMark);
-                Main.verifyEndGame(main.computerMark);
-                Main.isPlayerTurn = true;
-            }
+            button2.setText(main.playerMark);
+            main.alreadyFilled.add(2);
+            main.verifyEndGame(main.playerMark);
+            this.markCell(main.cp.computeNewPlay(main.alreadyFilled));
         }
-        main.alreadyFilled.add(2);
+
     }
 
     private void button3ActionPerformed(ActionEvent e) {
         if(button3.getText().equals("")) {
-            if (Main.isPlayerTurn){
-                button3.setText(main.playerMark);
-                Main.verifyEndGame(main.playerMark);
-                Main.isPlayerTurn = false;
-            } else {
-                button3.setText(main.computerMark);
-                Main.verifyEndGame(main.computerMark);
-                Main.isPlayerTurn = true;
-            }
+            button3.setText(main.playerMark);
+            main.alreadyFilled.add(3);
+            main.verifyEndGame(main.playerMark);
+            this.markCell(main.cp.computeNewPlay(main.alreadyFilled));
         }
-        main.alreadyFilled.add(3);
     }
 
     private void button4ActionPerformed(ActionEvent e) {
         if(button4.getText().equals("")) {
-            if (Main.isPlayerTurn){
-                button4.setText(main.playerMark);
-                Main.verifyEndGame(main.playerMark);
-                Main.isPlayerTurn = false;
-            } else {
-                button4.setText(main.computerMark);
-                Main.verifyEndGame(main.computerMark);
-                Main.isPlayerTurn = true;
-            }
+            button4.setText(main.playerMark);
+            main.alreadyFilled.add(4);
+            main.verifyEndGame(main.playerMark);
+            this.markCell(main.cp.computeNewPlay(main.alreadyFilled));
         }
-        main.alreadyFilled.add(4);
     }
 
     private void button5ActionPerformed(ActionEvent e) {
         if(button5.getText().equals("")) {
-            if (Main.isPlayerTurn){
-                button5.setText(main.playerMark);
-                Main.verifyEndGame(main.playerMark);
-                Main.isPlayerTurn = false;
-            } else {
-                button5.setText(main.computerMark);
-                Main.verifyEndGame(main.computerMark);
-                Main.isPlayerTurn = true;
-            }
+            button5.setText(main.playerMark);
+            main.alreadyFilled.add(5);
+            main.verifyEndGame(main.playerMark);
+            this.markCell(main.cp.computeNewPlay(main.alreadyFilled));
         }
-        main.alreadyFilled.add(5);
     }
 
     private void button6ActionPerformed(ActionEvent e) {
         if(button6.getText().equals("")) {
-            if (Main.isPlayerTurn){
-                button6.setText(main.playerMark);
-                Main.verifyEndGame(main.playerMark);
-                Main.isPlayerTurn = false;
-            } else {
-                button6.setText(main.computerMark);
-                Main.verifyEndGame(main.computerMark);
-                Main.isPlayerTurn = true;
-            }
+            button6.setText(main.playerMark);
+            main.alreadyFilled.add(6);
+            main.verifyEndGame(main.playerMark);
+            this.markCell(main.cp.computeNewPlay(main.alreadyFilled));
         }
-        main.alreadyFilled.add(6);
     }
 
     private void button7ActionPerformed(ActionEvent e) {
         if(button7.getText().equals("")) {
-            if (Main.isPlayerTurn){
-                button7.setText(main.playerMark);
-                Main.verifyEndGame(main.playerMark);
-                Main.isPlayerTurn = false;
-            } else {
-                button7.setText(main.computerMark);
-                Main.verifyEndGame(main.computerMark);
-                Main.isPlayerTurn = true;
-            }
+            button7.setText(main.playerMark);
+            main.alreadyFilled.add(7);
+            main.verifyEndGame(main.playerMark);
+            this.markCell(main.cp.computeNewPlay(main.alreadyFilled));
         }
-        main.alreadyFilled.add(7);
     }
 
     private void button8ActionPerformed(ActionEvent e) {
         if(button8.getText().equals("")) {
-            if (Main.isPlayerTurn){
-                button8.setText(main.playerMark);
-                Main.verifyEndGame(main.playerMark);
-                Main.isPlayerTurn = false;
-            } else {
-                button8.setText(main.computerMark);
-                Main.verifyEndGame(main.computerMark);
-                Main.isPlayerTurn = true;
-            }
+            button8.setText(main.playerMark);
+            main.alreadyFilled.add(8);
+            main.verifyEndGame(main.playerMark);
+            this.markCell(main.cp.computeNewPlay(main.alreadyFilled));
         }
-        main.alreadyFilled.add(8);
     }
 
     private void button9ActionPerformed(ActionEvent e) {
         if(button9.getText().equals("")) {
-            if (Main.isPlayerTurn){
-                button9.setText(main.playerMark);
-                Main.verifyEndGame(main.playerMark);
-                Main.isPlayerTurn = false;
-            } else {
-                button9.setText(main.computerMark);
-                Main.verifyEndGame(main.computerMark);
-                Main.isPlayerTurn = true;
-            }
+            button9.setText(main.playerMark);
+            main.alreadyFilled.add(9);
+            main.verifyEndGame(main.playerMark);
+            this.markCell(main.cp.computeNewPlay(main.alreadyFilled));
         }
-        main.alreadyFilled.add(9);
     }
 
     private void initComponents() {
@@ -302,35 +255,37 @@ public class tictactoe extends JFrame {
     }
 
     public void markCell(int cell){
-        switch (cell){
-            case 1 :
+        System.out.println("Computer has chosen : " + cell);
+        main.alreadyFilled.add(cell);
+
+            if(cell == 1) {
                 button1.setText(main.computerMark);
                 Main.verifyEndGame(main.computerMark);
-            case 2 :
+            } else if (cell == 2) {
                 button2.setText(main.computerMark);
                 Main.verifyEndGame(main.computerMark);
-            case 3 :
+            } else if (cell == 3) {
                 button3.setText(main.computerMark);
                 Main.verifyEndGame(main.computerMark);
-            case 4 :
+            } else if (cell == 4) {
                 button4.setText(main.computerMark);
                 Main.verifyEndGame(main.computerMark);
-            case 5 :
+            } else if (cell == 5) {
                 button5.setText(main.computerMark);
                 Main.verifyEndGame(main.computerMark);
-            case 6 :
+            } else if (cell == 6) {
                 button6.setText(main.computerMark);
                 Main.verifyEndGame(main.computerMark);
-            case 7 :
+            } else if (cell == 7) {
                 button7.setText(main.computerMark);
                 Main.verifyEndGame(main.computerMark);
-            case 8 :
+            } else if (cell == 8) {
                 button8.setText(main.computerMark);
                 Main.verifyEndGame(main.computerMark);
-            case 9 :
+            } else if (cell == 9) {
                 button9.setText(main.computerMark);
                 Main.verifyEndGame(main.computerMark);
-        }
+            }
     }
 
 }
