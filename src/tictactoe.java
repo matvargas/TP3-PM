@@ -15,16 +15,11 @@ public class tictactoe extends JFrame {
 
     private void button1ActionPerformed(ActionEvent e) {
         if(button1.getText().equals("")) {
-            if (main.isPlayerTurn){
-                button1.setText(main.playerMark);
-                Main.verifyEndGame(main.playerMark);
-                Main.isPlayerTurn = false;
-            } else {
-                button1.setText(main.computerMark);
-                Main.verifyEndGame(main.computerMark);
-                Main.isPlayerTurn = true;
-            }
+            button1.setText(main.playerMark);
+            Main.verifyEndGame(main.playerMark);
+            this.markCell(main.cp.computeNewPlay(main.alreadyFilled));
         }
+        main.alreadyFilled.add(1);
     }
 
     private void button2ActionPerformed(ActionEvent e) {
@@ -39,6 +34,7 @@ public class tictactoe extends JFrame {
                 Main.isPlayerTurn = true;
             }
         }
+        main.alreadyFilled.add(2);
     }
 
     private void button3ActionPerformed(ActionEvent e) {
@@ -53,6 +49,7 @@ public class tictactoe extends JFrame {
                 Main.isPlayerTurn = true;
             }
         }
+        main.alreadyFilled.add(3);
     }
 
     private void button4ActionPerformed(ActionEvent e) {
@@ -67,6 +64,7 @@ public class tictactoe extends JFrame {
                 Main.isPlayerTurn = true;
             }
         }
+        main.alreadyFilled.add(4);
     }
 
     private void button5ActionPerformed(ActionEvent e) {
@@ -81,6 +79,7 @@ public class tictactoe extends JFrame {
                 Main.isPlayerTurn = true;
             }
         }
+        main.alreadyFilled.add(5);
     }
 
     private void button6ActionPerformed(ActionEvent e) {
@@ -95,6 +94,7 @@ public class tictactoe extends JFrame {
                 Main.isPlayerTurn = true;
             }
         }
+        main.alreadyFilled.add(6);
     }
 
     private void button7ActionPerformed(ActionEvent e) {
@@ -109,6 +109,7 @@ public class tictactoe extends JFrame {
                 Main.isPlayerTurn = true;
             }
         }
+        main.alreadyFilled.add(7);
     }
 
     private void button8ActionPerformed(ActionEvent e) {
@@ -123,6 +124,7 @@ public class tictactoe extends JFrame {
                 Main.isPlayerTurn = true;
             }
         }
+        main.alreadyFilled.add(8);
     }
 
     private void button9ActionPerformed(ActionEvent e) {
@@ -137,6 +139,7 @@ public class tictactoe extends JFrame {
                 Main.isPlayerTurn = true;
             }
         }
+        main.alreadyFilled.add(9);
     }
 
     private void initComponents() {
@@ -150,7 +153,7 @@ public class tictactoe extends JFrame {
         button8 = new JButton();
         button9 = new JButton();
 
-        setTitle("Tic Tac Toe");
+        setTitle("Tic-Tac-Toe");
         Container contentPane = getContentPane();
 
         button1.setText("");
@@ -289,8 +292,44 @@ public class tictactoe extends JFrame {
     public void showWinner(String mark){
         if(mark == "X"){
             JOptionPane.showMessageDialog(this, "Parabéns! Você venceu o game!");
+        } else if (mark == "draw") {
+            JOptionPane.showMessageDialog(this, "Empate!");
         } else {
             JOptionPane.showMessageDialog(this, "O Computador venceu, mais sorte na próxima!");
+        }
+
+        main.finishGame();
+    }
+
+    public void markCell(int cell){
+        switch (cell){
+            case 1 :
+                button1.setText(main.computerMark);
+                Main.verifyEndGame(main.computerMark);
+            case 2 :
+                button2.setText(main.computerMark);
+                Main.verifyEndGame(main.computerMark);
+            case 3 :
+                button3.setText(main.computerMark);
+                Main.verifyEndGame(main.computerMark);
+            case 4 :
+                button4.setText(main.computerMark);
+                Main.verifyEndGame(main.computerMark);
+            case 5 :
+                button5.setText(main.computerMark);
+                Main.verifyEndGame(main.computerMark);
+            case 6 :
+                button6.setText(main.computerMark);
+                Main.verifyEndGame(main.computerMark);
+            case 7 :
+                button7.setText(main.computerMark);
+                Main.verifyEndGame(main.computerMark);
+            case 8 :
+                button8.setText(main.computerMark);
+                Main.verifyEndGame(main.computerMark);
+            case 9 :
+                button9.setText(main.computerMark);
+                Main.verifyEndGame(main.computerMark);
         }
     }
 

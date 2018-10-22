@@ -1,13 +1,19 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
 
     public static final String playerMark = "X";
     public static final String computerMark = "O";
+    static int numOfPlays = 0;
+    List<Integer> alreadyFilled = new ArrayList<Integer>();
 
     public static boolean isPlayerTurn = true;
     static boolean playerWon = false;
     static boolean computerWon = false;
 
     public static tictactoe board = new tictactoe();
+    ComputerPlayer cp = new ComputerPlayer();
 
     public static void main(String [] args) {
         if(!board.isVisible())
@@ -15,6 +21,8 @@ public class Main {
     }
 
     public static void verifyEndGame(String mark) {
+        numOfPlays ++;
+
         if(board.button1.getText().equals(mark)){
               if(board.button2.getText().equals(mark) &&
                       board.button3.getText().equals(mark)){
@@ -59,6 +67,16 @@ public class Main {
             board.showWinner(mark);
         }
 
+        if(numOfPlays >= 9) {
+            board.showWinner("draw");
+        }
+
+
+    }
+
+    public void finishGame() {
+        this.board.setVisible(false);
+        System.exit(0);
     }
 
 }
