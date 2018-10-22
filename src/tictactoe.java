@@ -1,3 +1,12 @@
+/**
+ * Tic Tac Toe
+ * Programação Modular - UFMG
+ * Matheus Filipe Sieiro Vargas
+ * 2014144812
+ * Classe de tratamento da interface gráfica.
+ */
+
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;

@@ -1,3 +1,12 @@
+/**
+ * Tic Tac Toe
+ * Programação Modular - UFMG
+ * Matheus Filipe Sieiro Vargas
+ * 2014144812
+ * Classe principal de execução
+ */
+
+
 import java.util.ArrayList;
 import java.util.List;
 

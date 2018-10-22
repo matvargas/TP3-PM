@@ -1,3 +1,11 @@
+/**
+ * Tic Tac Toe
+ * Programação Modular - UFMG
+ * Matheus Filipe Sieiro Vargas
+ * 2014144812
+ * Classe responsável pelo tratamento das jogadas referentes ai NPC.
+ */
+
 import java.util.List;
 import java.util.Random;
 public class ComputerPlayer {
